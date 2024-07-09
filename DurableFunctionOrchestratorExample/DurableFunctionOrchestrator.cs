@@ -16,6 +16,7 @@ namespace DurableFunctionOrchestratorExample
     {
         private readonly IServiceBusService _serviceBusService;
         private readonly ILogger<DurableFunctionOrchestrator> _logger;
+        private readonly Uri _landingPage = new("https://signup.surgemarketplace.com/resolve/azure/b86a7ece-e7dc-4275-b808-1a75de20c9a9");
 
         public DurableFunctionOrchestrator(IServiceBusService serviceBusService,
             ILogger<DurableFunctionOrchestrator> logger)
@@ -36,6 +37,7 @@ namespace DurableFunctionOrchestratorExample
 
             //Log the instance Id - this Id can be used to track the results of the orchestration run
             _logger.LogInformation("Orchestrator instance created with Id: {instanceId}", instanceId);
+            _logger.LogInformation("ACT : Trigger Completed");
         }
 
         [Function(Constants.DurableOrchestrator)]
@@ -76,6 +78,7 @@ namespace DurableFunctionOrchestratorExample
             await context.CallActivityAsync(Constants.DurableActivity.CompleteAction, result);
 
             //Return result for logging and information purposes
+            _logger.LogInformation($"ACT : Trigger RUN Completed SubId : {orchestratorAction.SubscriptionId}");
             return result;
         }
 
@@ -89,7 +92,8 @@ namespace DurableFunctionOrchestratorExample
         public OrchestrationResultModel CreateInfrastructure([ActivityTrigger] OrchestrationActionModel orchestrationAction)
         {
             //Call your orchestration functions here to create your instances and generate a url for a user to log in to
-            return orchestrationAction.CreateSuccessResult(null);
+            _logger.LogInformation("ACT : Create Completed");
+            return orchestrationAction.CreateSuccessResult(_landingPage, _landingPage);
         }
 
         ///<summary>
@@ -101,6 +105,7 @@ namespace DurableFunctionOrchestratorExample
         public OrchestrationResultModel DeleteInfrastructure([ActivityTrigger] OrchestrationActionModel orchestrationAction)
         {
             //Call your orchestration functions here to delete your instances
+            _logger.LogInformation("ACT : Delete Completed");
             return orchestrationAction.CreateSuccessResult(null);
         }
 
@@ -111,7 +116,8 @@ namespace DurableFunctionOrchestratorExample
         public OrchestrationResultModel Reinstate([ActivityTrigger] OrchestrationActionModel orchestrationAction)
         {
             //Call your orchestration functions here to create your instances and generate a url for a user to log in to
-            return orchestrationAction.CreateSuccessResult(new Uri("http://mycoolwebsite.net"));
+            _logger.LogInformation("ACT : Reinstate Completed");
+            return orchestrationAction.CreateSuccessResult(_landingPage);
         }
 
         ///<summary>
@@ -122,7 +128,8 @@ namespace DurableFunctionOrchestratorExample
         public OrchestrationResultModel Suspend([ActivityTrigger] OrchestrationActionModel orchestrationAction)
         {
             //Call your orchestration functions here to create your instances and generate a url for a user to log in to
-            return orchestrationAction.CreateSuccessResult(new Uri("http://mycoolwebsite.net"));
+            _logger.LogInformation("ACT : Suspend Completed");
+            return orchestrationAction.CreateSuccessResult(_landingPage);
         }
 
         ///<summary>
@@ -134,7 +141,8 @@ namespace DurableFunctionOrchestratorExample
         public OrchestrationResultModel Update([ActivityTrigger] OrchestrationActionModel orchestrationAction)
         {
             //Call your orchestration functions here to create your instances and generate a url for a user to log in to
-            return orchestrationAction.CreateSuccessResult(new Uri("http://mycoolwebsite.net"));
+            _logger.LogInformation("ACT : Update Completed");
+            return orchestrationAction.CreateSuccessResult(_landingPage);
         }
 
         ///<summary>
@@ -146,6 +154,7 @@ namespace DurableFunctionOrchestratorExample
         {
             _logger.LogInformation("Completing orchestration action for subscription with Id {subscriptionId}", orchestrationResult.SubscriptionId);
 
+            _logger.LogInformation("ACT : Complete Completed");
             await _serviceBusService.SendResultToStactize(orchestrationResult);
 
         }

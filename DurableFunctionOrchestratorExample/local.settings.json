@@ -3,9 +3,9 @@
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-    "ingressServiceBusConnectionString": "{{IngressQueueConnectionString}}",
-    "ingressQueueName": "{{IngressQueueName}}",
-    "egressServiceBusConnectionString": "{{EgressQueueConnectionString}}",
-    "egressQueueName": "{{EgressQueueName}}"
+    "ingressServiceBusConnectionString": "Endpoint=sb://stactizetesting.servicebus.windows.net/;SharedAccessKeyName=StactizeTestIn;SharedAccessKey=LcXHM75qgIq2lVxj1oCRbNVAH962BqDZ/+ASbPc83uE=;EntityPath=in",
+    "ingressQueueName": "in",
+    "egressServiceBusConnectionString": "Endpoint=sb://stactizetesting.servicebus.windows.net/;SharedAccessKeyName=StactizeTestOut;SharedAccessKey=H5T6RRJgGR6PmrdA/fmf07SaZ+uoPMpWe+ASbBT6W0c=;EntityPath=out",
+    "egressQueueName": "out"
   }
 }
