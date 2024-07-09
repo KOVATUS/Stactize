@@ -1,11 +1,12 @@
 {
-  "IsEncrypted": false,
+  "IsEncrypted": true,
   "Values": {
-    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-    "ingressServiceBusConnectionString": "Endpoint=sb://stactizetesting.servicebus.windows.net/;SharedAccessKeyName=StactizeTestIn;SharedAccessKey=LcXHM75qgIq2lVxj1oCRbNVAH962BqDZ/+ASbPc83uE=;EntityPath=in",
-    "ingressQueueName": "in",
-    "egressServiceBusConnectionString": "Endpoint=sb://stactizetesting.servicebus.windows.net/;SharedAccessKeyName=StactizeTestOut;SharedAccessKey=H5T6RRJgGR6PmrdA/fmf07SaZ+uoPMpWe+ASbBT6W0c=;EntityPath=out",
-    "egressQueueName": "out"
-  }
+    "AzureWebJobsStorage": "CfDJ8MzboNtfy8ZEiorEsAgujMVtHkHoq4xCVbqZAlRh0Lau2O4mVs9U/UYrLPO5wW49QROydvlmgyIVfyjMdWv7YBYpdRkAr50NTBz8/wMMo+0fOATHwqOl2EreSD+E/TLEgk+V9o5leoTWgmdi7mwyCtI=",
+    "FUNCTIONS_WORKER_RUNTIME": "CfDJ8MzboNtfy8ZEiorEsAgujMV3qeOMatBbjZBKP4ZfNFKaDquxFSaESluuw7EFawN1O3VzvJU8kAluTdI4rE95XkecdxE1g6aKzcD2gRv3i9lH6dZUKIPIvewy8ffvRBMapg==",
+    "ingressServiceBusConnectionString": "CfDJ8MzboNtfy8ZEiorEsAgujMW0Ew6q9307JmVqL6CJSGJr23P4USy0PJsIhj3oBsBYVwpVxZa1697clvqEhh57h9KeUwvbx3SmP0zpL8vgz7HzNnm1QglqZFy0AjlFFpTmB+3omTDoxk/mpOxqti2QbKw1rTSI7CBDsmX60M5ghz4tRf0JPaZiUbX5eKcXvSCru64Xdj6aumvq2dxuvlLIwPxMcv2kCE5bNOIda9znftr/ka8aS1luxPtHcMCR9CzZhKkHMgeRrrqC9ooxO4r4Xb9TVfyxyLrJllHHPK5G6o3r1eL/ogMnJ+kBkc/4DP5S9XrhpIHvM/PPOZq8ox7tCnA=",
+    "ingressQueueName": "CfDJ8MzboNtfy8ZEiorEsAgujMXbucCO7mUoJ1dzMOcqMaY3xoUmdCH8a3MnWG4H8N6JrxCLeN6MOFW+5Cy0Alx6I8R4QkwztoKQHv63VI1/Y5W+xLx35XVt89VE8f6QpDzQQQ==",
+    "egressServiceBusConnectionString": "CfDJ8MzboNtfy8ZEiorEsAgujMWzvsDvXDG5aEFRb0Kn/6R5AQtxZ42ZXXMXIxxFfa9gypn81+dxTThvMrJqYPlMLmvJ5GA6Qa5twwFxaBRQptyp++AlueOaQU2NFsX2Ns47o1wXB5k3RISAFbXvpqjm4xKYBtJceyS94AVITEYeNfCoM1FxYXPie7JiaJvrM9+gwdftjZj5ucsLPvZ58qhyVQ9lcG43vyRLIIOjwmBNpHqRMoVznnBu7t/6ZWuWP4L2itnDw8lsmj9rLIL3VLRsbsnKpciLJkPPkJV8AKDVW9jeJ6GIO8EyY0u8oLifyVfnA+Ba2ZLuCJ7UlNo/4uUaIHc=",
+    "egressQueueName": "CfDJ8MzboNtfy8ZEiorEsAgujMWHrRkkd/33I8KxIHX+SH/+VpQ4BXLVwBEUCD7/1hpkjGc3wRgYF1buCF/DLpODt62C3TRIXgYgfKdEIj8iQ9p/V5b7a0qaWqwEAJU9sjZ1xw=="
+  },
+  "ConnectionStrings": {}
 }
